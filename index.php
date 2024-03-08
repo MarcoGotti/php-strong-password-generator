@@ -1,23 +1,5 @@
 <?php
-/* Milestone 1
-Creare un form che invii in GET la lunghezza della password. Una nostra funzione utilizzerà questo dato per generare una password casuale (composta da lettere, lettere maiuscole, numeri e simboli) da restituire all’utente. Scriviamo tutto (logica e layout) in un unico file index.php */
-
-var_dump($_GET['password']);
-
-function rdmPassword()
-{
-    $rdmPassword = '';
-    $source = 'hlmnpqwyjxkzPQWYXJKZ0123456789@#*%&$=!+/';
-    for ($i = 0; $i < strlen(trim($_GET['password'])); $i++) {
-        $n = rand(0, strlen($source) - 1);
-        $rdmPassword = $rdmPassword . $source[$n];
-    }
-    return $rdmPassword;
-}
-
-//var_dump(rdmPassword());
-
-
+include __DIR__ . '/logics/functions.php';
 
 ?>
 
