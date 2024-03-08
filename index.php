@@ -16,17 +16,20 @@ include __DIR__ . '/logics/functions.php';
 </head>
 
 <body>
-    <div class="container">
-        <form action="" method="get">
-            <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control" name="password" id="password" placeholder="" />
-            </div>
-            <button type="submit" class="btn btn-primary">Send</button>
-        </form>
+    <div class="container d-flex justify-content-center ">
+        <section class="col-4">
+            <form action="" method="get">
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" name="password" id="password" placeholder="" />
+                </div>
+                <button type="submit" class="btn btn-primary">Send</button>
+            </form>
 
-        <div class="text-center">Generated password: <h4><?= rdmPassword() ?></h4>
-        </div>
+            <div class="text-center">Generated password: <h4><?= rdmPassword() ?></h4>
+            </div>
+
+        </section>
     </div>
 
 
