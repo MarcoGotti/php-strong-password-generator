@@ -18,10 +18,11 @@ include __DIR__ . '/logics/functions.php';
 <body>
     <div class="container d-flex justify-content-center ">
         <section class="col-4">
-            <form action="" method="get">
+
+            <form action="" method="get"><!-- action="success.php" -->
                 <div class="mb-3">
-                    <label for="password" class="form-label">Password</label>
-                    <input type="password" class="form-control" name="password" id="password" placeholder="" />
+                    <label for="length" class="form-label">Length</label>
+                    <input type="text" class="form-control" name="length" id="length" placeholder="" />
                 </div>
                 <button type="submit" class="btn btn-primary">Send</button>
             </form>
