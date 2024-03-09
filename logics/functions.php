@@ -6,8 +6,9 @@ function rdmPassword()
 {
     $trimedInput = trim($_GET['password']);
 
-    if (!str_contains($trimedInput, ' ')) {
-
+    if (empty($trimedInput)) {
+        return '❔ enter a password';
+    } elseif (!str_contains($trimedInput, ' ')) {
         $rdmPassword = '';
         $source = 'hlmnpqwyjxkzPQWYXJKZ0123456789@#*%&$=!+/';
         for ($i = 0; $i < strlen($trimedInput); $i++) {
@@ -15,9 +16,7 @@ function rdmPassword()
             $rdmPassword = $rdmPassword . $source[$n];
         }
         return $rdmPassword;
-    } /* elseif (strlen($trimedInput) === 0) {
-        return '❔ enter a password';
-    } */
+    }
     return '⚠ no spaces between types';
 }
 
