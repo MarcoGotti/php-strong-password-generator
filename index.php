@@ -1,8 +1,10 @@
 <?php
 
 session_start();
+var_dump($_GET);
 
 include __DIR__ . '/logics/functions.php';
+
 
 ?>
 
@@ -18,20 +20,87 @@ include __DIR__ . '/logics/functions.php';
 
 </head>
 
-<body>
-    <div class="container d-flex justify-content-center ">
-        <section class="col-4">
+<body class="bg-primary"><!-- bg-dark -->
+    <header class="container text-center  text-white pt-5 pb-2">
+        <h1>Strong Password Generator</h1>
+        <h2>Genera una password sicura</h2>
+    </header>
 
-            <form action="./server.php" method="get"><!-- action="success.php" -->
-                <div class="mb-3">
-                    <input type="text" class="form-control" name="length" id="length" placeholder="Type a number" />
-                    <small id="lengthHelpId" class="<?= error() ?> ">Number between 8 and 20</small>
+    <main>
+        <section>
+            <div class="container">
+                <div class="alert alert-secondary" role="alert">
+                    <strong>nessun parametro valido inserito </strong>
                 </div>
-                <button type="submit" class="btn btn-primary">Send</button>
-            </form>
 
+            </div>
         </section>
-    </div>
+
+        <div class="container">
+            <section class="bg-white p-4">
+
+                <form action="" method="get"><!-- action="server" -->
+                    <div class="d-flex justify-content-between mb-2">
+                        <div>Password length</div>
+                        <div>
+                            <input type="text" class="form-control w-75 me-5" name="length" id="length" placeholder="Type a number" />
+                            <small id="lengthHelpId" class="<?= error() ?> ">Number between 8 and 20</small>
+                        </div>
+
+                    </div>
+                    <div class="d-flex justify-content-between mb-2 ">
+                        <div>Allow characters to repeat</div>
+                        <div class="me-5">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="repeat" id="repeat1" checked>
+                                <label class="form-check-label" for="repeat1">
+                                    Yes
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" value="off" name="repeat" id="repeat2">
+                                <label class="form-check-label" for="repeat2">
+                                    No
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-end">
+                        <div class="me-5">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="letters" id="flexCheckDefault" checked>
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Letters
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="numbers" id="flexCheckDefault" checked>
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Numbers
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="marks" id="flexCheckDefault" checked>
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Marks
+                                </label>
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+
+
+
+                    <button type="submit" class="btn btn-primary">Send</button>
+                </form>
+
+            </section>
+        </div>
+    </main>
 
 
 </body>
