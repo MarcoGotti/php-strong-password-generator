@@ -1,4 +1,7 @@
 <?php
+
+session_start();
+
 include __DIR__ . '/logics/functions.php';
 
 ?>
@@ -19,16 +22,13 @@ include __DIR__ . '/logics/functions.php';
     <div class="container d-flex justify-content-center ">
         <section class="col-4">
 
-            <form action="" method="get"><!-- action="success.php" -->
+            <form action="./server.php" method="get"><!-- action="success.php" -->
                 <div class="mb-3">
-                    <label for="length" class="form-label">Length</label>
-                    <input type="text" class="form-control" name="length" id="length" placeholder="" />
+                    <input type="text" class="form-control" name="length" id="length" placeholder="Type a number" />
+                    <small id="lengthHelpId" class="<?= error() ?> ">Number between 8 and 20</small>
                 </div>
                 <button type="submit" class="btn btn-primary">Send</button>
             </form>
-
-            <div class="text-center">Generated password: <h4><?= rdmPassword() ?></h4>
-            </div>
 
         </section>
     </div>
