@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-var_dump($_GET);
+//var_dump($_GET);
 
 include __DIR__ . '/logics/functions.php';
 
@@ -21,7 +21,7 @@ include __DIR__ . '/logics/functions.php';
 </head>
 
 <body class="bg-primary"><!-- bg-dark -->
-    <header class="container text-center  text-white pt-5 pb-2">
+    <header class="container text-center text-white pt-5 pb-2">
         <h1>Strong Password Generator</h1>
         <h2>Genera una password sicura</h2>
     </header>
@@ -39,7 +39,7 @@ include __DIR__ . '/logics/functions.php';
         <div class="container">
             <section class="bg-white p-4">
 
-                <form action="" method="get"><!-- action="server" -->
+                <form action="./server.php" method="get">
                     <div class="d-flex justify-content-between mb-2">
                         <div>Password length</div>
                         <div>

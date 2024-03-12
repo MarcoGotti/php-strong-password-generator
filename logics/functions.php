@@ -1,4 +1,8 @@
 <?php
+//session_start();
+/* $letters = $_SESSION['letters'];
+$numbers = $_SESSION['numbers'];
+$marks = $_SESSION['marks']; */
 
 
 function checkNumber($number)
@@ -13,6 +17,23 @@ function checkNumber($number)
     }
     return false;
 };
+
+
+function genSource($letters, $numbers, $marks)
+{
+    $source = '';
+    if ($_SESSION['letters'] === 'on') {
+        $source .= $letters;
+    }
+    if ($_SESSION['numbers'] === 'on') {
+        $source .= $numbers;
+    }
+    if ($_SESSION['marks'] === 'on') {
+        $source .= $marks;
+    }
+    return $source;
+};
+
 
 function error()
 {
