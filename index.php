@@ -1,7 +1,9 @@
 <?php
 
 session_start();
-//var_dump($_GET);
+//var_dump($_SESSION['error']);
+var_dump($_SESSION);
+var_dump($_GET);
 
 include __DIR__ . '/logics/functions.php';
 
@@ -20,37 +22,39 @@ include __DIR__ . '/logics/functions.php';
 
 </head>
 
-<body class="bg-primary"><!-- bg-dark -->
+<body class="bg-primary">
     <header class="container text-center text-white pt-5 pb-2">
         <h1>Strong Password Generator</h1>
         <h2>Genera una password sicura</h2>
     </header>
 
     <main>
-        <section>
-            <div class="container">
-                <div class="alert alert-secondary" role="alert">
-                    <strong>nessun parametro valido inserito </strong>
-                </div>
+        <?php if (isset($_SESSION['error'])) : ?>
+            <section>
+                <div class="container">
+                    <div class="alert alert-warning" role="alert">
+                        <strong>nessun parametro valido inserito </strong>
+                    </div>
 
-            </div>
-        </section>
+                </div>
+            </section>
+        <?php endif ?>
 
         <div class="container">
-            <section class="bg-white p-4">
+            <section class="bg-white p-5">
 
-                <form action="./server.php" method="get">
-                    <div class="d-flex justify-content-between mb-2">
+                <form action="" method="get"><!-- ./server.php -->
+                    <div class="d-flex justify-content-evenly mb-2">
                         <div>Password length</div>
-                        <div>
-                            <input type="text" class="form-control w-75 me-5" name="length" id="length" placeholder="Type a number" />
-                            <small id="lengthHelpId" class="<?= error() ?> ">Number between 8 and 20</small>
+                        <div class="col-2">
+                            <input type="text" class="form-control-sm me-5 d-block" name="length" id="length" placeholder="Type a number" />
+                            <small id="lengthHelpId" class="<?= error() ?>">Number between 8 and 20</small>
                         </div>
 
                     </div>
-                    <div class="d-flex justify-content-between mb-2 ">
+                    <div class="d-flex justify-content-evenly mb-2 ">
                         <div>Allow characters to repeat</div>
-                        <div class="me-5">
+                        <div class="col-2">
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="repeat" id="repeat1" checked>
                                 <label class="form-check-label" for="repeat1">
@@ -66,8 +70,9 @@ include __DIR__ . '/logics/functions.php';
                         </div>
                     </div>
 
-                    <div class="d-flex justify-content-end">
-                        <div class="me-5">
+                    <div class="d-flex justify-content-evenly">
+                        <div>Pick your preferences</div>
+                        <div class="col-2">
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="letters" id="flexCheckDefault" checked>
                                 <label class="form-check-label" for="flexCheckDefault">
@@ -86,15 +91,9 @@ include __DIR__ . '/logics/functions.php';
                                     Marks
                                 </label>
                             </div>
-
                         </div>
-
-
-
                     </div>
-
-
-
+                    <!-- serve button Annulla campi -->
                     <button type="submit" class="btn btn-primary">Send</button>
                 </form>
 
