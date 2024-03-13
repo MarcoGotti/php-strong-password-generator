@@ -15,7 +15,10 @@ $numbersSource = '0123456789';
 $marksSource = '?><-_@#*%&$=!+/*{}[]';
 $source = genSource($lettersSource, $numbersSource, $marksSource);
 
-if (checkNumber($trimedInput)) {
+if (
+    checkNumber($trimedInput) &&
+    (isset($_GET['letters']) || isset($_GET['numbers']) || isset($_GET['marks']))
+) {
 
     if ($repeat === 'on') {
 
@@ -39,10 +42,10 @@ if (checkNumber($trimedInput)) {
     header('Location: ./success.php');
 
     /* **************************************************************** */
-} elseif (!isset($_GET['letters']) && !isset($_GET['numbers']) && !isset($_GET['marks'])) {
+    /* } elseif (!isset($_GET['letters']) && !isset($_GET['numbers']) && !isset($_GET['marks'])) {
     session_unset();
     $_SESSION['check'] = 'asd';
-    header('Location: ./index.php');
+    header('Location: ./index.php'); */
     /* **************************************************************** */
 } else {
 

@@ -1,9 +1,9 @@
 <?php
 
 session_start();
-//var_dump($_SESSION['error']);
-var_dump($_SESSION);
-var_dump($_GET);
+
+//var_dump($_SESSION);
+//var_dump($_GET);
 
 include __DIR__ . '/logics/functions.php';
 
@@ -22,9 +22,9 @@ include __DIR__ . '/logics/functions.php';
 
 </head>
 
-<body class="bg-primary">
+<body class="bg-dark">
     <header class="container text-center text-white pt-5 pb-2">
-        <h1>Strong Password Generator</h1>
+        <h1 class="text-warning">Strong Password Generator</h1>
         <h2>Genera una password sicura</h2>
     </header>
 
@@ -33,7 +33,7 @@ include __DIR__ . '/logics/functions.php';
             <section>
                 <div class="container">
                     <div class="alert alert-warning" role="alert">
-                        <strong>nessun parametro valido inserito </strong>
+                        <strong>Not valid parameters</strong>
                     </div>
 
                 </div>
@@ -43,12 +43,12 @@ include __DIR__ . '/logics/functions.php';
         <div class="container">
             <section class="bg-white p-5">
 
-                <form action="" method="get"><!-- ./server.php -->
+                <form action="./server.php" method="get">
                     <div class="d-flex justify-content-evenly mb-2">
                         <div>Password length</div>
                         <div class="col-2">
                             <input type="text" class="form-control-sm me-5 d-block" name="length" id="length" placeholder="Type a number" />
-                            <small id="lengthHelpId" class="<?= error() ?>">Number between 8 and 20</small>
+                            <small id="lengthHelpId" class="<?= error() ?>">A number between 8 and 20</small>
                         </div>
 
                     </div>
@@ -93,8 +93,8 @@ include __DIR__ . '/logics/functions.php';
                             </div>
                         </div>
                     </div>
-                    <!-- serve button Annulla campi -->
-                    <button type="submit" class="btn btn-primary">Send</button>
+                    <!-- serve button Annulla campi. Con eventClick -->
+                    <button type="submit" class="btn btn-warning mt-3">Send</button>
                 </form>
 
             </section>

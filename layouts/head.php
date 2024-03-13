@@ -9,25 +9,13 @@
 
 </head>
 
-<body class="bg-primary"><!-- bg-dark -->
+<body class="bg-dark">
     <header class="container text-center text-white pt-5 pb-2">
-        <h1>Strong Password Generator</h1>
+        <h1 class="text-warning">Strong Password Generator</h1>
         <h2>Genera una password sicura</h2>
     </header>
 
     <main>
-
-        <!-- <?php if (isset($_SESSION['error'])) : ?>
-            <section>
-                <div class="container">
-                    <div class="alert alert-warning" role="alert">
-                        <strong>nessun parametro valido inserito </strong>
-                    </div>
-
-                </div>
-            </section>
-        <?php endif ?> -->
-
         <div class="container">
             <section class="bg-white p-5">
 
